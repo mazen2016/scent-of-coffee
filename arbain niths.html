@@ -10,181 +10,358 @@
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
   />
 
-      <style>
-      body {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        background: #1f1f22;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        font-family: 'Playfair Display', serif;
-        color: #f0e6d2;
-        text-align: center;
-      }
-      .menu-board {
-        width: 700px;
-        max-width: 90vw;
-        padding: 40px 35px;
-        border: 2px solid rgba(240, 230, 210, 0.7);
-        background:
-          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04) 0 2px, transparent 3px),
-          radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.03) 0 2px, transparent 3px),
-          radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.03) 0 2px, transparent 3px),
-          #242428;
-        background-size: 120px 120px, 160px 160px, 200px 200px, auto;
-        box-shadow: 0 0 0 2px rgba(240, 230, 210, 0.08) inset;
-      }
-      img.logo {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        float: right;
-      }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      
-      .material-icons {
-        color:  rgb(231 218 199);
-        line-height:  250px;
-        text-decoration: none;
-        margin-left: 20px;
-      }
+    body {
+      background: #15161c;
+      font-family: Georgia, "Times New Roman", serif;
+    }
 
-      h1 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-family: 'Cinzel', serif;
-        font-size: 2rem;
-        letter-spacing: 1px;
-      }
+    /* ================= HEADER ================= */
+    .top-section {
+      background: #17181f;
+      height: 245px;
+      position: relative;
+    }
 
-      h1 span {
-        font-size: 1rem;
-      }
+    .logo {
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      object-fit: cover;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-      .menu-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: left;
-        gap: 20px;
-      }
+    .home-btn {
+      position: absolute;
+      left: 112px;
+      top: 118px;
+      color: #f2e1ba;
+      text-decoration: none;
+      line-height: 1;
+    }
 
-      .left h2 {
-        margin: 0;
-        font-family: 'Cinzel', serif;
-        font-size: 1.6rem;
-      }
+    .home-btn .material-icons {
+      font-size: 34px;
+    }
 
-      .left p {
-        margin: 3px 0 0;
-        font-size: 1rem;
-      }
+    /* ================= MENU AREA ================= */
+    .menu-wrapper {
+      background: #15161c;
+      padding: 12px;
+    }
 
-      .price {
-        font-family: 'Cinzel', serif;
-        font-size: 1.6rem;
-        text-align: right;
-        white-space: nowrap;
-      }
+    .menu-board {
+      max-width: 930px;
+      margin: auto;
+      background: #15161c;
+      border: 12px solid #15161c;
+      padding: 18px 26px 24px;
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+    }
 
-      .price.small {
-        font-size: 1.2rem;
-        line-height: 1.2;
-      }
+    /* texture */
+    .menu-board::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(rgba(0,0,0,.10) 1px, transparent 1px),
+        radial-gradient(rgba(0,0,0,.05) 1px, transparent 1px),
+        radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px);
+      background-size: 20px 20px, 34px 34px, 48px 48px;
+      background-position: 0 0, 8px 10px, 17px 4px;
+      opacity: .45;
+      pointer-events: none;
+    }
 
-      .divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 14px 0;
-        color: rgba(240, 230, 210, 0.8);
-        font-size: 1rem;
-      }
+    /* rough black border effect */
+    .edge {
+      position: absolute;
+      background: #1e1e1e;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-      .divider::before,
-      .divider::after {
-        content: '';
-        flex: 1;
-        border-bottom: 1px solid rgba(240, 230, 210, 0.5);
-        margin: 0 14px;
-      }
 
-      .extras {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        font-family: 'Cinzel', serif;
-        font-size: 1.3rem;
-        margin-top: 16px;
-      }
+    .content {
+      position: relative;
+      z-index: 2;
+    }
 
-      .flavour {
-        text-align: center;
-        font-family: 'Cinzel', serif;
-        font-size: 1.4rem;
-        margin-top: 20px;
-      }
+    /* ================= TOP TITLE ================= */
+    .menu-top {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
 
-      .vat {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 1rem;
-      }
-              .map-img {
-          width: 55%;
-          height: 55%;
-          font-size: 10px;
-        }
+    .menu-title {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    .left-note,
+    .right-note {
+      font-size: 18px;
+      color: #343434;
+    }
+
+    .right-note {
+      text-align: right;
+    }
+
+    /* ================= MENU COLUMNS ================= */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 42px 1fr;
+      gap: 20px;
+      align-items: start;
+      margin-top: 10px;
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 10px;
+      border-bottom: 2px solid #4a4a4a;
+      padding: 5px 0 6px;
+      min-height: 40px;
+    }
+
+    .name {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.05;
+      text-transform: uppercase;
+      flex: 1;
+    }
+
+    .price {
+      font-size: 17px;
+      font-weight: 700;
+      min-width: 36px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* middle icons */
+    .icons-col {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      align-items: center;
+      padding-top: 2px;
+    }
+
+    .icon-row {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-size: 16px;
+      letter-spacing: -2px;
+    }
+
+    /* ================= BOTTOM ================= */
+    .bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+      align-items: end;
+    }
+
+    .extra-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .extra-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 500px;
+    }
+
+    .extra-col {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .extra-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .extra-note {
+      font-size: 13px;
+      line-height: 1.35;
+      color: #333;
+      margin-top: -1px;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #17181f;
+      color: #f0e8d8;
+      text-align: center;
+      padding: 28px 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
     footer a {
       color: #f3e2bd;
       text-decoration: none;
       font-weight: bold;
     }
-    .menu-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .map-img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgb(0, 0, 0);
+      margin-top: 10px;
+    }
+
+    .vat {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1rem;
+      color: rgb(231 218 199);
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 900px) {
+      .top-section {
+        height: 220px;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .home-btn {
+        left: 35px;
+        top: 102px;
+      }
+
+      .menu-top {
+        grid-template-columns: 1fr;
         text-align: center;
       }
 
-
-      @media (max-width: 640px) {
-        .menu-board {
-          padding: 28px 20px;
-        }
-
-        h1 {
-          font-size: 1.5rem;
-        }
-
-        .left h2,
-        .price {
-          font-size: 1.2rem;
-        }
-
-        .left p {
-          font-size: 0.9rem;
-        }
-
-        .extras {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          font-size: 1.1rem;
-        }
-
-        .flavour {
-          font-size: 1.2rem;
-        }
-        footer {
-          font-size: 4vw;
-        }
+      .right-note,
+      .left-note {
+        text-align: center;
       }
-    </style>
 
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .icons-col {
+        display: none;
+      }
+
+      .bottom,
+      .extra-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vat {
+        text-align: left;
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .top-section {
+        height: 200px;
+      }
+
+      .logo {
+        width: 105px;
+        height: 105px;
+      }
+
+      .home-btn {
+        left: 18px;
+        top: 92px;
+      }
+
+      .home-btn .material-icons {
+        font-size: 30px;
+      }
+
+      .menu-board {
+        padding: 18px 18px 22px;
+      }
+
+      .menu-title {
+        font-size: 22px;
+      }
+
+      .left-note,
+      .right-note {
+        font-size: 16px;
+      }
+
+      .name,
+      .price {
+        font-size: 14px;
+      }
+
+      .extra-title {
+        font-size: 22px;
+      }
+
+      .extra-item {
+        font-size: 14px;
+      }
+
+      .extra-note,
+      .vat {
+        font-size: 12px;
+      }
+    }
+  </style>
+><html>
 </head>
 <body>
 
@@ -206,10 +383,10 @@
 
       <div class="content">
         <div class="menu-main-title">ARABIAN NIGHTS</div>
-
+<br>
         <!-- COFFEE -->
         <div class="section-title">☕ COFFEE ☕</div>
-
+<br>
         <div class="menu-list">
           <div class="item">
             <div class="item-top">
@@ -248,9 +425,10 @@
             </div>
           </div>
         </div>
-
+<br>  
         <!-- TEA -->
         <div class="section-title">☕ TEA ☕</div>
+<br>
 
         <div class="menu-list">
           <div class="item">
