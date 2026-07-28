@@ -1,284 +1,255 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SCENT OF COFFEE</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:wght@500&display=swap"
-    />
-        <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
 
-    <style>
-      body {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        background: #1f1f22;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        font-family: 'Playfair Display', serif;
-        color: #f0e6d2;
-      }
-      .menu-board {
-        width: 700px;
-        max-width: 90vw;
-        padding: 40px 35px;
-        border: 2px solid rgba(240, 230, 210, 0.7);
-        background:
-          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04) 0 2px, transparent 3px),
-          radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.03) 0 2px, transparent 3px),
-          radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.03) 0 2px, transparent 3px),
-          #242428;
-        background-size: 120px 120px, 160px 160px, 200px 200px, auto;
-        box-shadow: 0 0 0 2px rgba(240, 230, 210, 0.08) inset;
-      }
-      img.logo {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        float: right;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SCENT OF COFFEE</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:wght@500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      background: #1f1f22;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Playfair Display', serif;
+      color: #f0e6d2;
+
+    }
+
+    .menu-board {
+      display:grid;
       
-      .material-icons {
-        color:  rgb(231 218 199);
-        line-height:  250px;
-        text-decoration: none;
-        margin-left: 20px;
-      }
+      width: 700px;
+      max-width: 90vw;
+      padding: 40px 35px;
+      border: 2px solid rgba(240, 230, 210, 0.7);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.03) 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.03) 0 2px, transparent 3px),
+        #242428;
+      background-size: 120px 120px, 160px 160px, 200px 200px, auto;
+      box-shadow: 0 0 0 2px rgba(240, 230, 210, 0.08) inset;
+    }
 
-      h1 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-family: 'Cinzel', serif;
-        font-size: 2rem;
-        letter-spacing: 1px;
-      }
+    img.logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      float: right;
+    }
 
-      h1 span {
-        font-size: 1rem;
-      }
 
-      .item {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 20px;
-      }
+    .material-icons {
+      font-size: 34px;
+      color: rgb(231 218 199);
+      line-height: 250px;
+      text-decoration: none;
+      margin-left: 20px;
+    }
 
-      .left h2 {
-        margin: 0;
-        font-family: 'Cinzel', serif;
-        font-size: 1.6rem;
-      }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
 
-      .left p {
-        margin: 3px 0 0;
-        font-size: 1rem;
-      }
+    h1 span {
+      font-size: 1rem;
+    }
 
-      .price {
-        font-family: 'Cinzel', serif;
-        font-size: 1.6rem;
-        text-align: right;
-        white-space: nowrap;
-      }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
 
-      .price.small {
-        font-size: 1.2rem;
-        line-height: 1.2;
-      }
+    .left h2 {
+      margin: 0;
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+    }
 
-      .divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 14px 0;
-        color: rgba(240, 230, 210, 0.8);
-        font-size: 1rem;
-      }
+    .left p {
+      margin: 3px 0 0;
+      font-size: 1rem;
+    }
 
-      .divider::before,
-      .divider::after {
-        content: '';
-        flex: 1;
-        border-bottom: 1px solid rgba(240, 230, 210, 0.5);
-        margin: 0 14px;
-      }
+    .price {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      text-align: right;
+      white-space: nowrap;
+    }
 
-      .extras {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        font-family: 'Cinzel', serif;
-        font-size: 1.3rem;
-        margin-top: 16px;
-      }
+    .price.small {
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
 
-      .flavour {
-        text-align: center;
-        font-family: 'Cinzel', serif;
-        font-size: 1.4rem;
-        margin-top: 20px;
-      }
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 14px 0;
+      color: rgba(240, 230, 210, 0.8);
+      font-size: 1rem;
+    }
 
-      .vat {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 1rem;
-      }
-      footer a {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 0.9rem;
-        color: #f0e6d2;
-      }
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid rgba(240, 230, 210, 0.5);
+      margin: 0 14px;
+    }
 
-      @media (max-width: 640px) {
-        .menu-board {
-          padding: 28px 20px;
-        }
+    .extras {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      margin-top: 16px;
+    }
 
-        h1 {
-          font-size: 1.5rem;
-        }
+    .flavour {
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      margin-top: 20px;
+    }
 
-        .left h2,
-        .price {
-          font-size: 1.2rem;
-        }
+    .vat {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1rem;
+    }
 
-        .left p {
-          font-size: 0.9rem;
-        }
+<    footer a {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #f0e6d2;
+    }
+  </style>
+</head>
 
-        .extras {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          font-size: 1.1rem;
-        }
+<body>
+  <header>
+    <img src="./logo.jpg" alt="logo" width="40" class="logo" />
 
-        .flavour {
-          font-size: 1.2rem;
-        }
-        footer {
-          font-size: 4vw;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <img src="./logo.jpg" alt="logo" width="40" class="logo" />
+    <a href="index.html"><i class="material-icons">home</i></a>
+  </header>
 
-      <a href="index.html"><i class="material-icons">home</i></a>
-    </header>
+  <div class="menu-board">
+    <h1>BACK TO BLACK <span>(Ice & Hot)</span></h1>
 
-    <div class="menu-board">
-      <h1>BACK TO BLACK <span>(Ice & Hot)</span></h1>
-
-      <div class="item">
-        <div class="left">
-          <h2>ESPRESSO</h2>
-          <p>(Our blend – single origin)</p>
-        </div>
-        <div class="price">68 - 88</div>
+    <div class="item">
+      <div class="left">
+        <h2>ESPRESSO</h2>
+        <p>(Our blend – single origin)</p>
       </div>
-
-      <div class="divider">☕☕</div>
-
-      <div class="item">
-        <div class="left">
-          <h2>AMERICANO</h2>
-          <p>(Our blend – single origin)</p>
-        </div>
-        <div class="price">74 - 92</div>
-      </div>
-
-      <div class="divider">☕☕</div>
-
-      <div class="item">
-        <div class="left">
-          <h2>AMERICAN COFFEE</h2>
-          <p>(One cup – refillable)</p>
-        </div>
-        <div class="price">65 - 85</div>
-      </div>
-
-      <div class="divider">☕☕</div>
-
-      <div class="item">
-        <div class="left">
-          <h2>COLD BREW</h2>
-          <p>(Seasonal origin)</p>
-        </div>
-        <div class="price">110</div>
-      </div>
-
-      <div class="divider">☕☕</div>
-
-      <div class="item">
-        <div class="left">
-          <h2>SO SPECIALITY</h2>
-          <p>(filter coffee)</p>
-          <p>(V60 – CHEMEX – PHIN)</p>
-        </div>
-        <div class="price small">ASK OUR BARISTAS</div>
-      </div>
-
-      <div class="divider">☕☕</div>
-
-      <div class="item">
-        <div class="left">
-          <h2>SPARKLING DIAMONDS</h2>
-          <p>(Sparkling water + espresso)</p>
-        </div>
-        <div class="price">85 - 105</div>
-      </div>
-
-      <div class="divider">☕☕</div>
-
-      <div class="item">
-        <div class="left">
-          <h2>RED EYE</h2>
-          <p>(American coffee + espresso)</p>
-        </div>
-        <div class="price">110</div>
-      </div>
-
-      <div class="divider">☕☕</div>
-
-      <div class="item">
-        <div class="left">
-          <h2>I JUST NEED COFFEE</h2>
-        </div>
-        <div class="price">70</div>
-      </div>
-
-      <div class="divider">☕☕</div>
-
-      <div class="extras">
-        <div>MAKE IT COLD <strong>+5</strong></div>
-        <div>CANNED (Put it in can) <strong>+15</strong></div>
-      </div>
-
-      <div class="flavour">
-        ADD FLAVOUR <strong>+30</strong>
-      </div>
-
-      <p class="vat">ALL PRICES INCLUDE %14 VAT</p>
+      <div class="price">68 - 88</div>
     </div>
-   
-    <center>      
-<footer>
+
+    <div class="divider">☕☕</div>
+
+    <div class="item">
+      <div class="left">
+        <h2>AMERICANO</h2>
+        <p>(Our blend – single origin)</p>
+      </div>
+      <div class="price">74 - 92</div>
+    </div>
+
+    <div class="divider">☕☕</div>
+
+    <div class="item">
+      <div class="left">
+        <h2>AMERICAN COFFEE</h2>
+        <p>(One cup – refillable)</p>
+      </div>
+      <div class="price">65 - 85</div>
+    </div>
+
+    <div class="divider">☕☕</div>
+
+    <div class="item">
+      <div class="left">
+        <h2>COLD BREW</h2>
+        <p>(Seasonal origin)</p>
+      </div>
+      <div class="price">110</div>
+    </div>
+
+    <div class="divider">☕☕</div>
+
+    <div class="item">
+      <div class="left">
+        <h2>SO SPECIALITY</h2>
+        <p>(filter coffee)</p>
+        <p>(V60 – CHEMEX – PHIN)</p>
+      </div>
+      <div class="price small">ASK OUR BARISTAS</div>
+    </div>
+
+    <div class="divider">☕☕</div>
+
+    <div class="item">
+      <div class="left">
+        <h2>SPARKLING DIAMONDS</h2>
+        <p>(Sparkling water + espresso)</p>
+      </div>
+      <div class="price">85 - 105</div>
+    </div>
+
+    <div class="divider">☕☕</div>
+
+    <div class="item">
+      <div class="left">
+        <h2>RED EYE</h2>
+        <p>(American coffee + espresso)</p>
+      </div>
+      <div class="price">110</div>
+    </div>
+
+    <div class="divider">☕☕</div>
+
+    <div class="item">
+      <div class="left">
+        <h2>I JUST NEED COFFEE</h2>
+      </div>
+      <div class="price">70</div>
+    </div>
+
+    <div class="divider">☕☕</div>
+
+    <div class="extras">
+      <div>MAKE IT COLD <strong>+5</strong></div>
+      <div>CANNED (Put it in can) <strong>+15</strong></div>
+    </div>
+
+    <div class="flavour">
+      ADD FLAVOUR <strong>+30</strong>
+    </div>
+
+    <p class="vat">ALL PRICES INCLUDE %14 VAT</p>
+  </div>
+
+  <center>
+    <footer>
       <div>
         <p>
           Made by
@@ -291,24 +262,19 @@
       </div>
       <div style="margin-top: 20px">
         <p>📍 Visit us at our location</p>
-        <a
-          href="https://www.google.com/maps/place/Scent+of+Coffee/@30.0648999,31.2169458,16.42z/data=!4m6!3m5!1s0x1458410033418b3f:0xc744c96ff0fb09eb!8m2!3d30.0649759!4d31.2171345!16s%2Fg%2F11y9rqctz7?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
-          target="_blank"
-        >
-          <img
-            src="./map.png"
-            alt="موقعنا على الخريطة"
-            style="
+        <a href="https://www.google.com/maps/place/Scent+of+Coffee/@30.0648999,31.2169458,16.42z/data=!4m6!3m5!1s0x1458410033418b3f:0xc744c96ff0fb09eb!8m2!3d30.0649759!4d31.2171345!16s%2Fg%2F11y9rqctz7?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank">
+          <img src="./map.png" alt="موقعنا على الخريطة" style="
               max-width: 300px;
               width: 100%;
               border-radius: 10px;
               box-shadow: 0 4px 8px rgb(0, 0, 0);
-            "
-          />
+            " />
         </a>
       </div>
       <p>📞 Contact us: <a href="tel:0503110312">0503110312</a></p>
     </footer>
-</center>
-  </body>
+  </center>
+</body>
+
 </html>
