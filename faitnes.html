@@ -40,7 +40,7 @@ body{
 }
 
 .menu{
-width: 625px;
+width: 500px;
     margin:20px auto;
     background:#1d1d1d;
     color:white;
@@ -109,7 +109,7 @@ width: 625px;
 footer{
     text-align: center;
     margin-top: 40px;
-    color: #000;
+    color: #f0e6d2;
 }
     footer a {
       text-align: center;
@@ -130,36 +130,16 @@ footer{
         border-radius: 50%;
         float: right;
       }
-            @media (max-width: 640px) {
-        .menu-board {
-          padding: 28px 20px;
-        }
-
-        h1 {
-          font-size: 1.5rem;
-        }
-
-        .left h2,
-        .price {
-          font-size: 1.2rem;
-        }
-
-        .left p {
-          font-size: 0.9rem;
-        }
-
-        .extras {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          font-size: 1.1rem;
-        }
-
-        .flavour {
-          font-size: 1.2rem;
-        }
-      }
-
+@media (max-width: 1500px){
+    .container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 850px){
+    .container{
+        grid-template-columns: 1fr ;
+    }
+}
 
 
 </style>

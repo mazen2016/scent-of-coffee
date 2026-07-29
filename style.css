@@ -55,6 +55,11 @@ header{
     font-size: 23px;
     line-height: 100px;
 }
+        footer a {
+          font-size: 16px;
+          color: #000;
+        }
+
 
 
         footer {
